@@ -1,0 +1,67 @@
+
+Simulating 10004569 trajectories of atom (mass 86.9 amu, temp 1.0e-06 Kelvin) starting 5000.0 Bohr away from origin, 
+colliding head-on at fixed speed with Paul-trapped ion (mass 170.9 amu) starting at rest at origin,
+for simulated time 1000.0 microseconds using GPU with 8 cores.
+
+We will use approximately 206.822 megabytes (MB) of storage (0.000 MB for workspace, 190.822 MB for csvs, 16.000 MB for figures).
+
+The atom-ion potential is V(r) = -159.546/r^4 + 2.0e+09/r^8, with Re = 70.8 Bohr and De = 1.0e+00 Kelvin.
+
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 8 workers.
+[Warning: Support for GPU devices with Compute Capability 3.7 will be removed in
+a future MATLAB release. For more information on GPU support, see <a
+href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU
+Computing Requirements</a>.] 
+[> In atomiongpu>@(x)gpuArray(x) (line 334)
+In atomiongpu (line 340)] 
+
+Running calculations ...
+
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+Warning: Support for GPU devices with Compute Capability 3.7 will be removed in a future MATLAB release. For more information on GPU support, see <a href="matlab:web('http://www.mathworks.com/help/parallel-computing/gpu-computing-requirements.html','-browser')">GPU Computing Requirements</a>.
+> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.pool.optionallyDeserialize', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m', 7)" style="font-weight:bold">parallel.internal.pool.optionallyDeserialize</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+pool/optionallyDeserialize.m',7,0)">line 7</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parallel.internal.parfor.cppRemoteParallelFunction', '/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m', 52)" style="font-weight:bold">parallel.internal.parfor.cppRemoteParallelFunction</a> (<a href="matlab: opentoline('/gpfs/software/MatLab2023a/toolbox/parallel/cluster/+parallel/+internal/+parfor/cppRemoteParallelFunction.m',52,0)">line 52</a>)
+
+Finished calculating. It took 52848.874 seconds.
+
+The probability of forming a complex is 59.87%.
+
+According to ode45gpu on the GPU, the longest-lived trajectory had bounces = 3 and lifetime = 987.1 microseconds.
+Calculating this trajectory using ode45gpu on the CPU ...
+Done. According to ode45gpu on the CPU, bounces = 2 and lifetime = 954.9 microseconds.
+Calculating this trajectory using ode45 ...
+Done. Success, ode45 and ode45gpu match on the CPU!
+
+[Warning: MATLAB has disabled some advanced graphics rendering features by
+switching to software OpenGL. For more information, click <a
+href="matlab:opengl('problems')">here</a>.] 
+
+Calculating custom trajectory using ode45gpu ...
+Done. According to ode45gpu, bounces = 59 and lifetime = 19.1 microseconds.
+Calculating custom trajectory using ode45 ...
+Done. Success, ode45 and ode45gpu match on the CPU!
+
+The results are in the folder 8-13-2025@14.11.01atomiongpu.
+
+Parallel pool using the 'Processes' profile is shutting down.
