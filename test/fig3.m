@@ -1,0 +1,36 @@
+clear all;
+setenv('TZ', 'America/New_York');
+fclose('all');
+set(groot,'defaultAxesTickLabelInterpreter','latex');
+set(groot,'defaulttextinterpreter','latex');
+set(groot,'defaultLegendInterpreter','latex');
+set(groot,'defaultAxesFontSize',50); %get(groot,'factory')
+set(groot,'defaultAxesLineWidth',3);
+set(groot,'defaultLineLineWidth',3);
+set(groot,'defaultLineMarkerSize',50);
+set(groot,'defaultErrorbarLineWidth',3);
+set(groot,'defaultErrorbarMarkerSize',50);
+set(groot,'defaultErrorbarCapSize',20);
+set(groot,'defaultAxesView',[0,90]);
+set(groot,'defaultAxesBox','on');
+set(groot,'defaultTextFontSize',50);
+set(groot,'defaultConstantlineLineWidth',3);
+set(groot,'defaultConstantlineAlpha',1);
+set(groot,'defaultAxesLabelFontSizeMultiplier',1);
+set(groot,'defaultFigurePosition',[1190,381,867,825]);
+mainhere = string(datetime('now','Format','M-d-y@HH.mm.ss'))+"fig3";
+mkdir(mainhere);
+
+load("fig3.mat");
+figure; hold on;
+tendFplot = tendF';
+tendGplot = tendG';
+tendHplot = tendH';
+plot(1:ntheta*nphi, cumsum(tendFplot(:))/3600);
+plot(1:ntheta*nphi, cumsum(tendGplot(:))/3600);
+plot(1:ntheta*nphi, cumsum(tendHplot(:))/3600);
+legend(["\verb+ode45+, $f(t,y)$","\verb+ode45+, $g(t,y)$","\verb+ode45+, $h(t,y)$"],"Location","Northwest");
+xlabel("Number of collisions, $n$");
+ylabel("Cumulative runtime, $t$ (hours)");
+print(gcf,'-vector','-dsvg',mainhere+"/fig3.svg");
+hold off;
