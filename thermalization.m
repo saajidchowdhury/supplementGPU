@@ -51,9 +51,9 @@ savecsvs      = "yes";     % "yes" or "no"
 onlyonecsv    = "angle";   % "no" or "angle" or ...
 
 % thermalization
-tion          = 100 * 2*pi / (1/2*OmegaRF*sqrt(ax+1/2*qx^2));
+tion          = 10 * 2*pi / (1/2*OmegaRF*sqrt(ax+1/2*qx^2));
 ncol          = 3;
-center        = "origin";  % "ion" or "origin"
+center        = "ion";     % "ion" or "origin"
 extraplots    = "no";      % "yes" or "no"
 
 % Input end
@@ -213,6 +213,7 @@ yend11sp = cell(ncores,1);
 yend12sp = cell(ncores,1);
 
 fprintf("\nRunning calculations ...\n\n");
+tstart = tic;
 
 for icol = 1:ncol
 
@@ -265,6 +266,15 @@ for icol = 1:ncol
         error("Error, positions must be ""uniform"" or ""random"".");
     end
 
+    t0s = tends;
+    tmaxs = t0s + tmax;
+    y01s = yend1s;
+    y02s = yend2s;
+    y03s = yend3s;
+    y04s = yend4s;
+    y05s = yend5s;
+    y06s = yend6s;
+
     if collisiontype == "head-on"
         v0 = sqrt(3*kB*Tatom/Eh/matom);
         y07s = r0*sin(rthetas).*cos(rphis);
@@ -281,34 +291,34 @@ for icol = 1:ncol
         y010s = randn(ntheta,nphi)*sqrt(kB*Tatom/Eh/matom);
         y011s = randn(ntheta,nphi)*sqrt(kB*Tatom/Eh/matom);
         y012s = randn(ntheta,nphi)*sqrt(kB*Tatom/Eh/matom);
+        if center == "origin"
+            %do nothing
+        elseif center == "ion"
+            y07s = y07s + y01s;
+            y08s = y08s + y02s;
+            y09s = y09s + y03s;
+        else
+            error("Error, center must be ""origin"" or ""ion"".");
+        end
         for i = 1:ntheta*nphi
-            if y07s(i)*y010s(i) + y08s(i)*y011s(i) + y09s(i)*y012s(i) > 0
-                y010s(i) = -y010s(i);
-                y011s(i) = -y011s(i);
-                y012s(i) = -y012s(i);
+            if center == "ion"
+                if (y07s(i)-y01s(i))*y010s(i) + (y08s(i)-y02s(i))*y011s(i) + (y09s(i)-y03s(i))*y012s(i) > 0
+                    y010s(i) = -y010s(i);
+                    y011s(i) = -y011s(i);
+                    y012s(i) = -y012s(i);
+                end
+            elseif center == "origin"
+                if y07s(i)*y010s(i) + y08s(i)*y011s(i) + y09s(i)*y012s(i) > 0
+                    y010s(i) = -y010s(i);
+                    y011s(i) = -y011s(i);
+                    y012s(i) = -y012s(i);
+                end
+            else
+                error("Error, center must be ""ion"" or ""origin"".");
             end
         end
     else
         error("Error, collisiontype must be ""head-on"" or ""thermal"".");
-    end
-
-    t0s = tends;
-    tmaxs = t0s + tmax;
-    y01s = yend1s;
-    y02s = yend2s;
-    y03s = yend3s;
-    y04s = yend4s;
-    y05s = yend5s;
-    y06s = yend6s;
-
-    if center == "origin"
-        %do nothing
-    elseif center == "ion"
-        y07s = y07s + y01s;
-        y08s = y08s + y02s;
-        y09s = y09s + y03s;
-    else
-        error("Error, center must be ""origin"" or ""ion"".");
     end
 
     if ncores >= 2
@@ -412,7 +422,6 @@ for icol = 1:ncol
         y012sp{i} = g(y012s(floor(ntrajectories/ncores*(i-1))+1 : floor(ntrajectories/ncores*i)));
     end
     
-    tstart = tic;
     parfor i = 1:ncores
         [tendsp{i}, yend1sp{i}, yend2sp{i}, yend3sp{i}, yend4sp{i}, yend5sp{i}, yend6sp{i}, ...
             yend7sp{i}, yend8sp{i}, yend9sp{i}, yend10sp{i}, yend11sp{i}, yend12sp{i}, ...
@@ -422,7 +431,6 @@ for icol = 1:ncol
             t0sp{i}, tmaxsp{i}, y01sp{i}, y02sp{i}, y03sp{i}, y04sp{i}, y05sp{i}, y06sp{i}, ...
             y07sp{i}, y08sp{i}, y09sp{i}, y010sp{i}, y011sp{i}, y012sp{i}, rtolsp{i}, atolsp{i}, maxstepssp{i}, validsp{i}, tionsp{i});
     end
-    tend = toc(tstart);
 
     for i = 1:ncores
         tends(floor(ntrajectories/ncores*(i-1))+1 : floor(ntrajectories/ncores*i)) = gather(tendsp{i});
@@ -453,7 +461,9 @@ for icol = 1:ncol
 
 end
 
+tend = toc(tstart);
 fprintf("\nFinished calculating. It took %.3f seconds.\n\n",tend);
+
 
 
 if extraplots == "yes"
@@ -885,7 +895,7 @@ if extraplots == "yes"
 elseif extraplots == "no"
     %do nothing
 else
-    fprintf("Error, extraplots must be ""yes"" or ""no"".\n");
+    error("Error, extraplots must be ""yes"" or ""no"".");
 end
 
 clear tendsp yend1sp yend2sp yend3sp yend4sp yend5sp yend6sp yend7sp yend8sp yend9sp yend10sp yend11sp yend12sp ...
@@ -1309,10 +1319,6 @@ function [tend,yend1,yend2,yend3,yend4,yend5,yend6,yend7,yend8,yend9,yend10,yend
         transfer = matom * sqrt((y010-yend10)^2+(y011-yend11)^2+(y012-yend12)^2);
         dist = r;
         KE = 1/2 * mion * (yend4^2+yend5^2+yend6^2);
-
-
-
-
 
 
 
